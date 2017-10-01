@@ -1,0 +1,22 @@
+This folder contains four sub folders:
+
+DREAM10 : the DREAM3 Yeast dataset size of 10 and true network;
+
+DREAM50: the DREAM3 Yeast dataset size of 50 and true network;
+
+DREAM100: the DREAM3 Yeast dataset size of 100 and true network;
+
+SOS: Gene expresion dataset of SOS DNA repair network in E.cli and true network;
+
+Note that in  folder DREAM10,DREAM50,DREAM100 there also  Dream10_wt.csv,Dream50_wt.csv,Dream100_wt.csv contains origin wildtype line (w/t), some methods take this line and some ignore which makes comparision more complexed. 
+
+Hope you good luck,
+and any question or advise please do not hesitate to email to chenxofhit@gmail.com.
+
+Pony Chen
+2017-07-07 (80 years anniversary of The Marco Polo Bridge Incident)
+
+
+
+
+
