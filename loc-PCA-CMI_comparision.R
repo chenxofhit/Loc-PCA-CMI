@@ -2,38 +2,40 @@ library(readr)
 library(R.matlab)
 library(Matrix)
 library(RLowPC)
+library(minet)
 
-print.picture.exp <- function(p.p1, p.fname)
+print.picture.exp <- function(pplot, p.fname)
 {
+  #dev.new()
   dpi <- 96
   scaling <- 5.0 / (900)
   wid <- 1600 * scaling * dpi
   ht <- 600 * scaling * dpi
   png(p.fname, width = wid, height = ht, res = dpi)
-  print(p.p1)
+  print(pplot)
   dev.off()
 }
 
 #options(error=traceback)
 
 #set working direcotory based on your workspace
-setwd("/media/chenx/Program/Exp/bmrnet")
+setwd("/media/chenx/Program/Exp/loc-PCA-CMI")
 
 args <- commandArgs(trailingOnly = TRUE)
 hybrid<-length(args) # switch variable  for debug in Rstudio or integrate running in bash
 
 if(!hybrid){
-  datafile <- "./db/Dream10/Dream10_Yeast.csv" #10,50,100, modify here
-  goldenfile <- "./db/Dream10/Dream10_Yeast_golden.txt"
-  clusterfile<-  paste(getwd(),"/result_loc_pcacmi/Dream10_Yeast_cluster.mat",sep = "")
+  datafile <- "./db/Dream10/Dream10_Ecoli.csv" #10,50,100, modify here
+  goldenfile <- "./db/Dream10/Dream10_Ecoli_golden.txt"
+  clusterfile<-  paste(getwd(),"/result_loc_pcacmi/Dream10_Ecoli_cluster.mat",sep = "")
   
   #immediate result from Matlab Runtime
-  pcacmi_adjmatrix <- paste(getwd(),"/result_pca_cmi/Dream10_Yeast_adjmatrixg.mat",sep = "")
-  pcapmi_adjmatrix <- paste(getwd(),"/result_pca_pmi/Dream10_Yeast_adjmatrixg.mat",sep = "")
+  pcacmi_adjmatrix <- paste(getwd(),"/result_pca_cmi/Dream10_Ecoli_adjmatrixg.mat",sep = "")
+  pcapmi_adjmatrix <- paste(getwd(),"/result_pca_pmi/Dream10_Ecoli_adjmatrixg.mat",sep = "")
   
-  loc_pca_cmi_adjmatrix <- paste(getwd(),"/result_loc_pcacmi/Dream10_Yeast_adjmatrixg.mat",sep = "")
+  loc_pca_cmi_adjmatrix <- paste(getwd(),"/result_loc_pcacmi/Dream10_Ecoli_adjmatrixg.mat",sep = "")
   
-  prfile <-  paste(getwd(),"/result_loc_pcacmi/Dream10_Yeast_AUPR_AUROC.png",sep = "")
+  prfile <-  paste(getwd(),"/result_loc_pcacmi/Dream10_Ecoli_AUPR_AUROC.png",sep = "")
   
 }else{
   datafile <- args[[1]]
@@ -128,8 +130,8 @@ cat("pca_cmi",'\t',datafile,'\t',auc.roc(dream3_pcacmi.tbl),'\t',auc.pr(dream3_p
 cat("loc_pca_cmi",'\t',datafile,'\t',auc.roc(dream3_loc_pcacmi.tbl),'\t',auc.pr(dream3_loc_pcacmi.tbl),'\n')
 
 y <- as.matrix(dream3_golden)[lower.tri(as.matrix(dream3_golden))]
-
-loc_mrnet_x <- as.matrix(mrnet_data_filter_net)[lower.tri(as.matrix(mrnet_data_filter_net))]
+                                                                                                                                                                                                                                                                                                                                                                                                      
+#loc_mrnet_x <- as.matrix(mrnet_data_filter_net)[lower.tri(as.matrix(mrnet_data_filter_net))]
 aracne_x <-  as.matrix(aracne)[lower.tri(as.matrix(aracne))]
 mrnet_x <-  as.matrix(mrnet_spearman)[lower.tri(as.matrix(mrnet_spearman))]
 pca_pmi_x <- as.matrix(dream3_pcapmi )[lower.tri(as.matrix(dream3_pcapmi ))]
@@ -142,15 +144,7 @@ library(ggplot2)
 library(grid)
 
 
-# R_locmrnet <- mmdata(scores = loc_mrnet_x,labels =y)
-# R_mrnet <- mmdata(scores = mrnet_x,labels =y)
-# R_pca_pmi <-  mmdata(scores = pca_pmi_x,labels =y)
-# R_pca_cmi <-  mmdata(scores = pca_cmi_x,labels =y)
-# R_loc_pca_cmi <-  mmdata(scores = loc_pca_cmi_x,labels =y)
-
 scoreall <- list(loc_pca_cmi_x,pca_pmi_x,pca_cmi_x,mrnet_x,aracne_x)
 R_all <- mmdata(scores = scoreall,labels = y, modnames = c("Loc-PCA-CMI","PCA-PMI","PCA-CMI","MRNET","ARACNE"))
 mscurves <- evalmod(R_all)
-p<-autoplot(mscurves) + theme(legend.position="bottom")
-p
-print.picture.exp(p, prfile)
+ggsave(prfile,plot = autoplot(mscurves),dpi = 96)
