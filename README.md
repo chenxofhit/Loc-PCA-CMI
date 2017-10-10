@@ -7,22 +7,23 @@ Ubuntu/Linux Bash, Matlab 2015b, R 3.3.1 (with package "readr", "R.matlab", "Mat
 
 ## Running Step
 
-Step 1,  To run the complete experiment with only one bash command (sudo privillege perhaps needed according to your running environment):
+Step 1,  To run the complete experiment with only one bash command in the current folder (sudo privillege perhaps needed according to your running environment):
 ```{bash}
-bash main_locpcacmi_DREAM3_batch.sh
+cd ./ && bash ./main_locpcacmi_DREAM3_batch.sh
 ```
 
-The command will generate four sub folders as result_loc_pcacmi, result_loc_pcapmi, result_pca_cmi and result_pca_pmi and the result including AUPR and AUROC will be output to the folders.
-For a more visualized summary you may use the below command to collect the  results in comparison folder:
+The command will generate four sub folders as result_loc_pcacmi, result_loc_pcapmi, result_pca_cmi and result_pca_pmi and the result including AUPR and AUROC will be output to the folders. For a more visualized summary you may use the below command to collect the  results:
 ```{bash}
-
-bash ./comparison/result_merge.sh
+cd ./ && bash ./result_merge.sh
 ```
-and the summary will be output to result_merge_final.res in the same folder.
+and the summary will be output to result_merge_final.res .
 
-Step 2, For comparison with other methods including ARACNE, MRNET, PCA-PMI, PCA-CMI and loc-PCA-PMI you can run loc-PCA-CMI_comparison.R in comparison folder in your R IDE (eg. RStudio) with different input files configuration in the code.
+Step 2, For comparison with more methods including ARACNE, MRNET, PCA-PMI, PCA-CMI and loc-PCA-PMI as in the paper stated,  it is encouraged to run the following bash command in the folder comparison:
+```{bash}
+cd ./comparison && bash ./loc-PCA-CMI_comparison.batch.sh 
+```
 
-Noticed that except above mentioned  main_locpcacmi_DREAM3_batch.sh , result_merge.sh, loc-PCA-CMI_comparison.R, if you know the code quite very well any change is discouraged.
+Above command will generate both txt files and image files with AUPR and AUROC details in the same folder. 
 
 Any question, please do not hesitate to  contact me with following address with bash command for decryption:
 
@@ -30,3 +31,4 @@ Any question, please do not hesitate to  contact me with following address with 
 echo "Y2hlbnhvZmhpdEBnbWFpbC5jb20K"|base64 -d
 ```
 or [submit issue](https://github.com/chenxofhit/Loc-PCA-CMI/issues) in the repository directly.
+
