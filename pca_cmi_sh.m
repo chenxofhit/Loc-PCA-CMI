@@ -24,7 +24,7 @@ end
 data = importdata(datafile);
 
 %% parameter of pca-cmi
-lamda = 0.03; order0=1;
+lamda = 0.03; order0=2;
 
 %% go  pca_cmi
 [Gb,Gval,order] = pca_cmi(data',lamda,order0) ;

@@ -44,7 +44,7 @@ for i=1:size(adj,1)
    
    subdata = data(tvcsIdx,:);
    
-   lamda = 0.03; order0 = 1;
+   lamda = 0.03; order0 = 2;
    
    %% go  pca_cmi
    [Gb,Gval,order] = pca_cmi(subdata,lamda,order0) ;

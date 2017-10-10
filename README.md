@@ -12,17 +12,21 @@ Step 1,  To run the complete experiment with only one bash command (sudo privill
 bash main_locpcacmi_DREAM3_batch.sh
 ```
 
-The command will generate three sub folders as result_loc_pcacmi, result_pca_cmi and result_pca_pmi and the result including AUPR and AUROC will be output to the folders.
-For a more visualized summary you may use the below command to collect the comparing result:
+The command will generate four sub folders as result_loc_pcacmi, result_loc_pcapmi, result_pca_cmi and result_pca_pmi and the result including AUPR and AUROC will be output to the folders.
+For a more visualized summary you may use the below command to collect the  results in comparison folder:
 ```{bash}
-bash result_merge.sh
+
+bash ./comparison/result_merge.sh
 ```
-and the summary will be output to result_merge_final.res file.
+and the summary will be output to result_merge_final.res in the same folder.
 
-Step 2, To get PR and ROC  curves  with comparing methods with ARACNE, MRNET, PCA-PMI and PCA-CMI you can run loc-PCA-CMI_comparision.R in your R IDE (eg. RStudio) with different input files configuration in the code.
+Step 2, For comparison with other methods including ARACNE, MRNET, PCA-PMI, PCA-CMI and loc-PCA-PMI you can run loc-PCA-CMI_comparison.R in comparison folder in your R IDE (eg. RStudio) with different input files configuration in the code.
 
+Noticed that except above mentioned  main_locpcacmi_DREAM3_batch.sh , result_merge.sh, loc-PCA-CMI_comparison.R, if you know the code quite very well any change is discouraged.
 
+Any question, please do not hesitate to  contact me with following address with bash command for decryption:
 
-Except above mentioned  main_locpcacmi_DREAM3_batch.sh , result_merge.sh , loc-PCA-CMI_comparision.R, if you know the code quite very well any change is discouraged.
-
-Any question, please do not hesitate mail to me chenxofhit@gmail.com  or  submit issue in the repository directly.
+```{bash} 
+echo "Y2hlbnhvZmhpdEBnbWFpbC5jb20K"|base64 -d
+```
+or [submit issue](https://github.com/chenxofhit/Loc-PCA-CMI/issues) in the repository directly.

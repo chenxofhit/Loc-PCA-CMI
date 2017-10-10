@@ -6,6 +6,7 @@
 
 #methods name!!!
 loc_pcacmi="result_loc_pcacmi"
+loc_pcapmi="result_loc_pcapmi"
 pca_cmi="result_pca_cmi"
 pca_pmi="result_pca_pmi"
 
@@ -23,6 +24,8 @@ rptfile=`pwd`"/result_merge_final.res"
 
 echo $loc_pcacmi>>$rptfile
 tail -n 2 `pwd`"/"$loc_pcacmi"/"${prroc[1]} >> $rptfile
+echo $loc_pcapmi>>$rptfile
+tail -n 2 `pwd`"/"$loc_pcapmi"/"${prroc[1]} >> $rptfile
 echo $pca_cmi>>$rptfile
 tail -n 2 `pwd`"/"$pca_cmi"/"${prroc[1]} >> $rptfile
 echo $pca_pmi>>$rptfile
@@ -30,6 +33,8 @@ tail -n 2 `pwd`"/"$pca_pmi"/"${prroc[1]} >> $rptfile
 
 echo $loc_pcacmi>>$rptfile
 tail -n 2 `pwd`"/"$loc_pcacmi"/"${prroc[2]} >> $rptfile
+echo $loc_pcapmi>>$rptfile
+tail -n 2 `pwd`"/"$loc_pcapmi"/"${prroc[2]} >> $rptfile
 echo $pca_cmi>>$rptfile
 tail -n 2 `pwd`"/"$pca_cmi"/"${prroc[2]} >> $rptfile
 echo $pca_pmi>>$rptfile
@@ -37,6 +42,8 @@ tail -n 2 `pwd`"/"$pca_pmi"/"${prroc[2]} >> $rptfile
 
 echo $loc_pcacmi>>$rptfile
 tail -n 2 `pwd`"/"$loc_pcacmi"/"${prroc[3]} >> $rptfile
+echo $loc_pcapmi>>$rptfile
+tail -n 2 `pwd`"/"$loc_pcapmi"/"${prroc[3]} >> $rptfile
 echo $pca_cmi>>$rptfile
 tail -n 2 `pwd`"/"$pca_cmi"/"${prroc[3]} >> $rptfile
 echo $pca_pmi>>$rptfile
@@ -44,6 +51,8 @@ tail -n 2 `pwd`"/"$pca_pmi"/"${prroc[3]} >> $rptfile
 
 echo $loc_pcacmi>>$rptfile
 tail -n 2 `pwd`"/"$loc_pcacmi"/"${prroc[4]} >> $rptfile
+echo $loc_pcapmi>>$rptfile
+tail -n 2 `pwd`"/"$loc_pcapmi"/"${prroc[4]} >> $rptfile
 echo $pca_cmi>>$rptfile
 tail -n 2 `pwd`"/"$pca_cmi"/"${prroc[4]} >> $rptfile
 echo $pca_pmi>>$rptfile
@@ -51,6 +60,8 @@ tail -n 2 `pwd`"/"$pca_pmi"/"${prroc[4]} >> $rptfile
 
 echo $loc_pcacmi>>$rptfile
 tail -n 2 `pwd`"/"$loc_pcacmi"/"${prroc[5]} >> $rptfile
+echo $loc_pcapmi>>$rptfile
+tail -n 2 `pwd`"/"$loc_pcapmi"/"${prroc[5]} >> $rptfile
 echo $pca_cmi>>$rptfile
 tail -n 2 `pwd`"/"$pca_cmi"/"${prroc[5]} >> $rptfile
 echo $pca_pmi>>$rptfile
@@ -58,6 +69,8 @@ tail -n 2 `pwd`"/"$pca_pmi"/"${prroc[5]} >> $rptfile
 
 echo $loc_pcacmi>>$rptfile
 tail -n 2 `pwd`"/"$loc_pcacmi"/"${prroc[6]} >> $rptfile
+echo $loc_pcapmi>>$rptfile
+tail -n 2 `pwd`"/"$loc_pcapmi"/"${prroc[6]} >> $rptfile
 echo $pca_cmi>>$rptfile
 tail -n 2 `pwd`"/"$pca_cmi"/"${prroc[6]} >> $rptfile
 echo $pca_pmi>>$rptfile
