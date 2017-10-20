@@ -25,6 +25,8 @@ cd ./comparison && bash ./loc-PCA-CMI_comparison.batch.sh
 
 Above command will generate both txt files and image files with AUPR and AUROC details in the same folder. 
 
+Step 3 (Addtional)，In order to to validate the parameter order0 in the PCA alogrithm,  main_locpcacmi_DREAM3_Ecoli_tpl_k.sh and main_locpcacmi_DREAM3_Yeast_tpl_k.sh are applied and result is output to folder result_*_k.
+
 Any question, please do not hesitate to  contact me with following address with bash command for decryption:
 
 ```{bash} 
