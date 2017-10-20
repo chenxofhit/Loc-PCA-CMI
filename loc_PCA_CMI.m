@@ -1,23 +1,27 @@
 close all;
 clc;
 
-if exist('result_loc_pcacmi')==0          
-    system('mkdir result_loc_pcacmi');
-end
+
 
 hybrid = exist('datafile'); %default
 
 if(~hybrid)
+
+    if exist('result_loc_pcacmi')==0          
+     system('mkdir result_loc_pcacmi');
+    end
     datafile='/media/chenx/Program/Exp/bmrnet/db/Dream100/Dream100_Yeast.csv';
     goldenfile= '/media/chenx/Program/Exp/bmrnet/db/Dream100/Dream100_Yeast_golden.txt';
     clusterfile = '/media/chenx/Program/Exp/bmrnet/result_loc_pcacmi/Dream100_Yeast_cluster.mat';
     adjmatrixfile  = '/media/chenx/Program/Exp/bmrnet/result_loc_pcacmi/Dream100_Yeast_adjmatrixg.mat';
+    order0=2;
 
 else
     datafile
     goldenfile
     clusterfile
     adjmatrixfile
+    order0
 end
 
 x = importdata(datafile);
@@ -44,7 +48,7 @@ for i=1:size(adj,1)
    
    subdata = data(tvcsIdx,:);
    
-   lamda = 0.03; order0 = 2;
+   lamda = 0.03; %order0 = 2;
    
    %% go  pca_cmi
    [Gb,Gval,order] = pca_cmi(subdata,lamda,order0) ;
