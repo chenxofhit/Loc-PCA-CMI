@@ -40,6 +40,7 @@ or [submit issue](https://github.com/chenxofhit/Loc-PCA-CMI/issues) in the repos
 
 Please cite the following paper in your publications if it helps your research:
 
+<div class="highlight-none"><div class="highlight"><pre>
 @ARTICLE{8660530, 
 author={X. {Chen} and M. {Li} and R. {Zheng} and S. {Zhao} and F. {Wu} and Y. {Li} and J. {Wang}}, 
 journal={Tsinghua Science and Technology}, 
@@ -52,3 +53,4 @@ keywords={gene regulatory networks;network inference;path consistency algorithm}
 doi={10.26599/TST.2018.9010097}, 
 ISSN={1007-0214}, 
 month={Aug},}
+</pre></div>
