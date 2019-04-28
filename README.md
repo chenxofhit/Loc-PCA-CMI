@@ -1,7 +1,5 @@
 # Loc-PCA-CMI
 
-Implementation for our paper [[Link]](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8660530).
-
 Loc-PCA-CMI is a novel method of gene regulatory network structure inference on gene knock-out expression data,which first identify Local Overlapped gene Clusters,  and then in conjunction with PCA-CMI method each local cluster structure is refined.
 
 ## System Environment
@@ -36,21 +34,3 @@ echo "Y2hlbnhvZmhpdEBnbWFpbC5jb20K"|base64 -d
 ```
 or [submit issue](https://github.com/chenxofhit/Loc-PCA-CMI/issues) in the repository directly.
 
-## Citation
-
-Please cite the following paper in your publications if it helps your research:
-
-<div class="highlight-none"><div class="highlight"><pre>
-@ARTICLE{8660530, 
-author={X. {Chen} and M. {Li} and R. {Zheng} and S. {Zhao} and F. {Wu} and Y. {Li} and J. {Wang}}, 
-journal={Tsinghua Science and Technology}, 
-title={A novel method of gene regulatory network structure inference from gene knock-out expression data}, 
-year={2019}, 
-volume={24}, 
-number={4}, 
-pages={446-455}, 
-keywords={gene regulatory networks;network inference;path consistency algorithm}, 
-doi={10.26599/TST.2018.9010097}, 
-ISSN={1007-0214}, 
-month={Aug},}
-</pre></div>
