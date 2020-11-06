@@ -7,9 +7,9 @@ hybrid = exist('datafile'); %default
 
 if(~hybrid)
 
-  if exist('result_loc_pcapmi')==0          
-    system('mkdir result_loc_pcapmi');
-  end
+    if exist('result_loc_pcacmi')==0          
+     system('mkdir result_loc_pcacmi');
+    end
     datafile='/media/chenx/Program/Exp/bmrnet/db/Dream100/Dream100_Yeast.csv';
     goldenfile= '/media/chenx/Program/Exp/bmrnet/db/Dream100/Dream100_Yeast_golden.txt';
     clusterfile = '/media/chenx/Program/Exp/bmrnet/result_loc_pcacmi/Dream100_Yeast_cluster.mat';
@@ -53,7 +53,7 @@ for i=1:size(adj,1)
    %lamda = 0.03; %order0 = 2;
    
    %% go  pca_cmi
-   [Gb,Gval,order] = pca_pmi(subdata,lamda,order0) ;
+   [Gb,Gval,order] = pca_cmi(subdata,lamda,order0) ;
    GvalSysmetric = triu(Gval,-1) + tril(Gval',0);
    
    tGval = zeros(gnum, gnum);
@@ -77,7 +77,7 @@ end
 indices = find(isnan(G) == 1);
 G(indices) = 0;
 
-save(adjmatrixfile, 'G', '-v6');
+save(adjmatrixfile,'G');
 
 if(hybrid)exit;
 end;

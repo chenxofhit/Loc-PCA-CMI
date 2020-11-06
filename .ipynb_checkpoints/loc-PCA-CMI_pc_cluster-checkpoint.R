@@ -3,10 +3,10 @@ library(R.matlab)
 library(Matrix)
 library(RLowPC)
 
-#options(error=traceback)
+options(error=traceback)
 
 #set working direcotory based on your workspace
-setwd("/home/cb213/chenx/Loc-PCA-CMI")
+setwd("/media/chenx/Program/Exp/bmrnet")
 
 args <- commandArgs(trailingOnly = TRUE)
 hybrid<-length(args) # switch variable  for debug in Rstudio or integrate running in bash
@@ -22,12 +22,6 @@ if(!hybrid){
   clusterfile <- args[3]
 
 }
-
-cat("parameters:\n")
-cat("datafile: ",datafile," \n")
-cat("goldenfile: ",goldenfile," \n")
-cat("clusterfile: ",clusterfile," \n")
-cat("-----------\n")
 
 dream3 <- read_csv(datafile, col_names = FALSE)
 dream3_golden <- read_delim(goldenfile,"\t", escape_double = FALSE, col_names = FALSE, 

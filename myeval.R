@@ -7,7 +7,7 @@ library(igraph)
 options(error=traceback) 
 
 #set working direcotory based on your workspace
-setwd("/media/chenx/Program/Exp/loc-PCA-CMI")
+setwd("/home/cb213/chenx/Loc-PCA-CMI")
 
 args <- commandArgs(trailingOnly = TRUE)
 hybrid<-length(args) # switch variable  for debug in Rstudio or integrate running in bash
@@ -15,13 +15,19 @@ hybrid<-length(args) # switch variable  for debug in Rstudio or integrate runnin
 if(!hybrid){
   datafile <- "./db/Dream50/Dream50_Yeast.csv" #10,10,10, modify here
   goldenfile <- "./db/Dream50/Dream50_Yeast_golden.txt"
-  adjmatrix <- "./result_cmim/Dream50_Yeast_adjmatrixg.mat"
+  adjmatrix <- "./result_cmi/Dream50_Yeast_adjmatrixg.mat"
 
 }else{
   datafile <- args[1]
   goldenfile <- args[2]
   adjmatrix <- args[3]
 }
+
+# cat("parameters:\n")
+# cat("datafile: ",datafile," \n")
+# cat("goldenfile: ",goldenfile," \n")
+# cat("adjmatrix: ",adjmatrix," \n")
+# cat("-----------\n")
 
 dream3_golden <- read_delim(goldenfile,"\t", escape_double = FALSE, col_names = FALSE, 
                             trim_ws = TRUE)

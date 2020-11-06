@@ -1,0 +1,14 @@
+Network	AUROC	AUPR
+/home/cb213/chenx/Loc-PCA-CMI/db/Dream100/Dream100_Ecoli.csv 	 0.8623188 	 0.2818797 
+Network	AUROC	AUPR
+/home/cb213/chenx/Loc-PCA-CMI/db/Dream100/Dream100_Ecoli.csv 	 0.8640107 	 0.2903139 
+Network	AUROC	AUPR
+/home/cb213/chenx/Loc-PCA-CMI/db/Dream100/Dream100_Ecoli.csv 	 0.8651906 	 0.3012924 
+Network	AUROC	AUPR
+/home/cb213/chenx/Loc-PCA-CMI/db/Dream100/Dream100_Ecoli.csv 	 0.8653317 	 0.3050267 
+Network	AUROC	AUPR
+/home/cb213/chenx/Loc-PCA-CMI/db/Dream100/Dream100_Ecoli.csv 	 0.8630129 	 0.3184922 
+Network	AUROC	AUPR
+/home/cb213/chenx/Loc-PCA-CMI/db/Dream100/Dream100_Ecoli.csv 	 0.8652217 	 0.3284028 
+Network	AUROC	AUPR
+/home/cb213/chenx/Loc-PCA-CMI/db/Dream100/Dream100_Ecoli.csv 	 0.8660767 	 0.3242068 

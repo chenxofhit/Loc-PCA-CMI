@@ -1,0 +1,14 @@
+Network	AUROC	AUPR
+/home/cb213/chenx/Loc-PCA-CMI/db/Dream100/Dream100_Yeast.csv 	 0.8548709 	 0.3575026 
+Network	AUROC	AUPR
+/home/cb213/chenx/Loc-PCA-CMI/db/Dream100/Dream100_Yeast.csv 	 0.8444888 	 0.3539923 
+Network	AUROC	AUPR
+/home/cb213/chenx/Loc-PCA-CMI/db/Dream100/Dream100_Yeast.csv 	 0.8536895 	 0.3887545 
+Network	AUROC	AUPR
+/home/cb213/chenx/Loc-PCA-CMI/db/Dream100/Dream100_Yeast.csv 	 0.8516358 	 0.3645214 
+Network	AUROC	AUPR
+/home/cb213/chenx/Loc-PCA-CMI/db/Dream100/Dream100_Yeast.csv 	 0.861882 	 0.3724768 
+Network	AUROC	AUPR
+/home/cb213/chenx/Loc-PCA-CMI/db/Dream100/Dream100_Yeast.csv 	 0.8649401 	 0.3693216 
+Network	AUROC	AUPR
+/home/cb213/chenx/Loc-PCA-CMI/db/Dream100/Dream100_Yeast.csv 	 0.864899 	 0.3646779 

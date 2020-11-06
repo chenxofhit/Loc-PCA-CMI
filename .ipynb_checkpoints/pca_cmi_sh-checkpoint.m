@@ -13,20 +13,18 @@ if(~hybrid)
   goldenfile  =  [pwd '/db/Dream50/Dream50_Yeast_golden.txt'];
   adjmatrixfile  =  [pwd '/result_pca_cmi/Dream50_Yeast_adjmatrixg.mat'];
   order0=2;
-  lamda=0.03;
 else
   datafile
   goldenfile
   adjmatrixfile
   order0
-  lamda
 end
 
 %% read database
 data = importdata(datafile);
 
 %% parameter of pca-cmi
-%lamda = 0.03; %order0=2；
+lamda = 0.03; %order0=2；
 
 %% go  pca_cmi
 [Gb,Gval,order] = pca_cmi(data',lamda,order0) ;
@@ -36,7 +34,7 @@ G=triu(Gval,-1)+tril(Gval',0);
 toc;
 
 
-save(adjmatrixfile,'G','-v6');
+save(adjmatrixfile,'G');
 
 if(hybrid)exit;
 end;

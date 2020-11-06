@@ -15,6 +15,7 @@ if(~hybrid)
     clusterfile = '/media/chenx/Program/Exp/bmrnet/result_loc_pcacmi/Dream100_Yeast_cluster.mat';
     adjmatrixfile  = '/media/chenx/Program/Exp/bmrnet/result_loc_pcacmi/Dream100_Yeast_adjmatrixg.mat';
     order0=2;
+    lamda=0.03;
 
 else
     datafile
@@ -22,6 +23,7 @@ else
     clusterfile
     adjmatrixfile
     order0
+    lamda
 end
 
 x = importdata(datafile);
@@ -48,7 +50,7 @@ for i=1:size(adj,1)
    
    subdata = data(tvcsIdx,:);
    
-   lamda = 0.03; %order0 = 2;
+   %lamda = 0.03; %order0 = 2;
    
    %% go  pca_cmi
    [Gb,Gval,order] = pca_cmi(subdata,lamda,order0) ;
@@ -75,7 +77,7 @@ end
 indices = find(isnan(G) == 1);
 G(indices) = 0;
 
-save(adjmatrixfile,'G');
+save(adjmatrixfile,'G','-v6');
 
 if(hybrid)exit;
 end;
